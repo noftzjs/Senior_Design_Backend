@@ -11,10 +11,10 @@ sql.connect(config, function (err) {
   if (err) console.log(err);
 });
 
-exports.getAllUsers = async () => {
+exports.getAllUsers = async() => {
   var request = new sql.Request();
   const data = await request.query(`select * from Users`);
-  return data;
+  return JSON.stringify(data);
 }
 
 exports.getUserByID = async (id) => {
@@ -26,4 +26,12 @@ exports.getUserByID = async (id) => {
 exports.delUserByID = async (id) => {
   var request = new sql.Request();
   const data = await request.query(`delete from Users where userID = ${id}`);
+}
+
+exports.createUser = async () => {
+  console.log('we are here')
+  var request = new sql.Request();
+  let emp = req.body;
+  var sql = "EXEC UserAddorEdit @userID = ?, @name = ?, @isVerified = ?, @ucEmail = ?, @password = ?";
+  const data = await request.query(sql, [emp.userID, emp.name, emp.isVerified, emp.ucEmail, emp.password]);
 }
