@@ -1,3 +1,5 @@
+const cors = require('cors');
+
 const express = require('express'),
     bodyParser = require('body-parser'),
     db = require('./server/config/db'),
@@ -6,6 +8,7 @@ const express = require('express'),
     morgan = require('morgan'),
     app = express();
 
+app.use(cors());
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -1,7 +1,9 @@
 'use strict';
 
 const routes = [
-    require('./routes/submissions')
+    require('./routes/submissions'),
+    require('./routes/Users'),
+    require('./routes/Votes')
 ];
 
 module.exports = function router(app, db) {

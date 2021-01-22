@@ -20,5 +20,7 @@ db.sequelize = sequelize;
 
 //Models/tables
 db.submissions = require('../models/submissions.js')(sequelize, Sequelize);
+db.Users = require('../models/Users.js')(sequelize, Sequelize);
+db.Votes = require('../models/Votes.js')(sequelize, Sequelize);
 
 module.exports = db;

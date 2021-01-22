@@ -29,7 +29,6 @@ module.exports = (db) => {
 
             db.submissions.create(submission)
                 .then(newSubmission => {
-                    //TODO: PEGAR ID DO NOVO OBJETO
                     res.json(newSubmission);
                 });
         },
