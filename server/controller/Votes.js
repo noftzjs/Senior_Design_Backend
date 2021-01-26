@@ -59,6 +59,15 @@ module.exports = (db) => {
                 });
         },
 
+        createIfUnique: (req, res) => {
+            var id = req.params.uploadID
+            var id2 = req.params.userID
+
+            db.Votes.findOrCreate({
+                where: { uploadID: id , userID: id2 }
+            })
+        },
+
         insert: (req, res) => {
             var Vote = {
                 uploadID: req.body.uploadID,
@@ -109,7 +118,8 @@ module.exports = (db) => {
             db.Votes.destroy({
                 where: { uploadID: id, userID: id2 }
             }).then(deletedVotes => {
-                res.json(deletedVotes);
+                res.json(deletedVotes)
+                res.send('Your vote  has been removed');
             });
         }
     }

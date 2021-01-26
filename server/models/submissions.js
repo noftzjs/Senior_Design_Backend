@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             required: false
         },
-        discription: {
+        description: {
             type: DataTypes.STRING,
             required: false
         },
