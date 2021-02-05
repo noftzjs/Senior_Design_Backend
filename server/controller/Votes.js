@@ -5,20 +5,6 @@ const Promise = require ('bluebird');
 module.exports = (db) => {
     const objectHelper = require('../utils/objectHelper');
 
- /*    createIfUnique = function (req,res,next)
-    {
-        db.sync().then(function () {
-            Votes.findOrCreate({where: {id: req.body.Votes.uploadID, id2: req.body.Votes.userID}})
-                .spread((Vote, created) => {
-                    console.log(created, Vote);
-                    res.json(created);
-                });
-        }).catch(function (error) {
-            console.log(error);
-            res.sendStatus(403)
-        })
-    } */
-
     return {
 
         list: (req, res) => {
@@ -50,38 +36,6 @@ module.exports = (db) => {
                     res.json(vote)
             });
         },
-
-/*         insert: async (req, res) => {
-            try {
-                let created = await Votes.findOrCreate({
-                    where: {  
-                        uploadID: req.body.uploadID, 
-                        userID: req.body.userID,
-                    }
-                }).spread((Votes, created) => {
-                    return created;
-                })
-                if(created) {
-                    res.json(Votes)
-                }
-            } catch (err) {
-                console.log('ERROR! => ${err.name}: ${err.message}')
-                res.status(500).send(err.message)
-            }
-        }, */
-
-
-        /* insert: (req, res) => {
-            var Vote = {
-                uploadID: req.body.uploadID,
-                userID: req.body.userID
-            };
-
-            db.Votes.create(Vote)
-                .then(newVote => {
-                    res.json(newVote);
-                });
-        }, */
 
         update: (req, res) => {
             const id = req.params.uploadID;
