@@ -6,15 +6,14 @@ module.exports = (sequelize, DataTypes) => {
     const Votes = sequelize.define('Votes', {
         uploadID: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
+            primaryKey: true
         },
         userID: {
             type: DataTypes.INTEGER,
-            required: false
+            primaryKey: true
         }
     }, {
-        timestamps: false
+        timestamps: false,
     });
 
     return Votes;

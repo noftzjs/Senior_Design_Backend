@@ -7,6 +7,7 @@ module.exports = (app, db) => {
 
     router.route('/Votes')
         .get(controller.list)
+        //.post(controller.insert)
         .post(controller.insert);
 
     router.route('/Votes/:uploadID&:userID')
