@@ -1,5 +1,9 @@
 const cors = require('cors');
 
+const multer = require('multer');
+module.exports = {upload: multer({dest:__dirname + '/uploads/images'})};
+
+
 const express = require('express'),
     bodyParser = require('body-parser'),
     db = require('./server/config/db'),
@@ -17,6 +21,8 @@ app.use((req, res, next) => {
   res.header('Content-Type', 'application/json');
   next();
 });
+
+app.use('/images', require('./server/router/routes/images'))
 
 router(app, db);
 

@@ -10,6 +10,7 @@ const env = {
   DATABASE_INSTANCE: 'SQLExpress',
 
   NODE_ENV: process.env.NODE_ENV || 'development',
+
 };
 
 module.exports = env;
