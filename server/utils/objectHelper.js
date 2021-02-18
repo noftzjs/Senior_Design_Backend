@@ -6,7 +6,7 @@ module.exports = {
             throw new Error('Source object is invalid.');
         };
         
-        if( null == dest || "object" != typeof dest)  { 
+         if( null == dest || "object" != typeof dest)  { 
             throw new Error('Destination object is invalid.')
         };
 

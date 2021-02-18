@@ -22,7 +22,7 @@ module.exports = (db) => {
         insert: (req, res) => {
             var submission = {
                 title: req.body.title,
-                discription: req.body.discription,
+                description: req.body.discription,
                 upVotes: req.body.upVotes,
                 userID: req.body.userID
             };

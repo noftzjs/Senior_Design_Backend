@@ -1,43 +1,9 @@
 const { Votes } = require('../config/db');
+const Promise = require ('bluebird');
+
 
 module.exports = (db) => {
     const objectHelper = require('../utils/objectHelper');
-
-    function isVoteUnique(id, id2) {
-        return db.Votes.count({ where: {uploadID: id, userID: id2} })
-            .then(count => {
-                if (count != 0) {
-                    return false;
-                }
-                return true;
-            });
-    }
-    isVoteUnique().then(isUnique => {
-        if (isUnique) {
-            (req, res) => {
-                var Vote = {
-                    uploadID: req.body.uploadID,
-                    userID: req.body.userID
-                };
-
-                db.Votes.create(Vote)
-                    .then(newVote => {
-                        res.json(newVote);
-                    });
-            }
-        } 
-        else {
-            (req, res) => {
-                var id = req.params.uploadID;
-                var id2 = req.params.userID;
-                db.Votes.destroy({
-                    where: { uploadID: id, userID: id2 }
-                }).then(deletedVotes => {
-                    res.json(deletedVotes);
-                });
-            }
-        }
-    });
 
     return {
 
@@ -59,16 +25,16 @@ module.exports = (db) => {
                 });
         },
 
-        insert: (req, res) => {
-            var Vote = {
-                uploadID: req.body.uploadID,
-                userID: req.body.userID
-            };
-
-            db.Votes.create(Vote)
-                .then(newVote => {
-                    res.json(newVote);
-                });
+        insert: async (req,res) => {
+            const vote = await Votes.findOrCreate({
+                where: {
+                    uploadID: req.body.uploadID,
+                    userID: req.body.userID,
+                },
+                raw: true
+            })  .then(vote => {
+                    res.json(vote)
+            });
         },
 
         update: (req, res) => {
@@ -109,7 +75,8 @@ module.exports = (db) => {
             db.Votes.destroy({
                 where: { uploadID: id, userID: id2 }
             }).then(deletedVotes => {
-                res.json(deletedVotes);
+                res.json(deletedVotes)
+                res.send('Your vote  has been removed');
             });
         }
     }
