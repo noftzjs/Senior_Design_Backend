@@ -1,29 +1,26 @@
 {
-  "name": "student_life_backend",
+  "name": "studentlifebackend",
   "version": "1.0.0",
-  "description": "All backend operations/API calls for StudentLife+.",
+  "description": "",
   "main": "Server.js",
-  "dependencies": {
-    "bluebird": "^3.7.2",
-    "cors": "^2.8.5",
-    "multer": "^1.4.2"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jnoftz/Senior_Design_Backend.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jnoftz/Senior_Design_Backend/issues"
+  "dependencies": {
+    "express": "^4.17.1",
+    "bluebird": "^3.7.2",
+    "cors": "^2.8.5",
+    "multer": "^1.4.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^1.19.4",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "6.2.0"
+
   },
-  "engines": {
-    "node": "v14.15.4"
-  },
-  "homepage": "https://github.com/jnoftz/Senior_Design_Backend#readme"
+ "engines": {
+      "node": "v14.15.4"
+  }
 }
