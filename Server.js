@@ -26,7 +26,7 @@ app.use('/images', require('./server/router/routes/images'))
 
 router(app, db);
 
-const PORT = 9000;
+const PORT = process.env.PORT || 9000;
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
