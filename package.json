@@ -18,7 +18,7 @@
     "nodemon": "^1.19.4",
     "sequelize": "^6.3.5",
     "sequelize-cli": "6.2.0",
-    "tedious": "^11.0.4"
+    "tedious": "^9.2.1"
   },
  "engines": {
       "node": "v14.15.4"
