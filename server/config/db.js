@@ -22,5 +22,7 @@ db.sequelize = sequelize;
 db.submissions = require('../models/submissions.js')(sequelize, Sequelize);
 db.Users = require('../models/Users.js')(sequelize, Sequelize);
 db.Votes = require('../models/Votes.js')(sequelize, Sequelize);
+db.images = require('../models/images.js')(sequelize, Sequelize);
+db.comments = require('../models/comments.js')(sequelize, Sequelize);
 
 module.exports = db;
