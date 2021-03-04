@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
         upVotes: {
             type: DataTypes.INTEGER,
             required: false
+        },
+        userID: {
+            type: DataTypes.INTEGER,
+            required: false
         }
     }, {
         timestamps: false
