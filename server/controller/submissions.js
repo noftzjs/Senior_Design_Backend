@@ -1,12 +1,15 @@
-const { submissions } = require('../config/db');
+const { submissions, sequelize } = require('../config/db');
 
 module.exports = (db) => {
     const objectHelper = require('../utils/objectHelper');
 
     return {
         list: (req, res) => {
-            db.submissions.findAll()
-                .then(submissions => {
+            db.submissions.findAll({
+                order: [
+                    ['uploadID', 'DESC']
+            ],
+            }).then(submissions => {
                     res.json(submissions);
             })
         },
