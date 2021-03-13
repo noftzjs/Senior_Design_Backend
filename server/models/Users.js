@@ -5,9 +5,8 @@ const { Users } = require("../config/db");
 module.exports = (sequelize, DataTypes) => {
     const Users = sequelize.define('Users', {
         userID: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
+            type: DataTypes.STRING,
+            primaryKey: true
         },
         name: {
             type: DataTypes.STRING,

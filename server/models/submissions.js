@@ -24,7 +24,16 @@ module.exports = (sequelize, DataTypes) => {
         userID: {
             type: DataTypes.INTEGER,
             required: false
+        },
+        anonymous: {
+            type: DataTypes.STRING,
+            required: false
+        },
+        postType: {
+            type: DataTypes.STRING,
+            required: false
         }
+
     }, {
         timestamps: false
     });

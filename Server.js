@@ -3,7 +3,6 @@ const cors = require('cors');
 const multer = require('multer');
 module.exports = {upload: multer({dest:__dirname + '/uploads/images'})};
 
-
 const express = require('express'),
     bodyParser = require('body-parser'),
     db = require('./server/config/db'),
@@ -16,6 +15,9 @@ app.use(cors());
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
+app.use('/userAuth', require('./server/userAuth/auth.js'));
 
 app.use((req, res, next) => {
   res.header('Content-Type', 'application/json');
