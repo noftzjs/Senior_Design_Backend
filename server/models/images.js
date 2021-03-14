@@ -6,7 +6,6 @@ module.exports = (sequelize, DataTypes) => {
     const images = sequelize.define('uploadImages', {
         URL: {
             type: DataTypes.STRING,
-            //primaryKey: true,
             required: false
         },
         uploadID: {
