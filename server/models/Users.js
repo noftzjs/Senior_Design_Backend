@@ -20,10 +20,6 @@ module.exports = (sequelize, DataTypes) => {
         ucEmail: {
             type: DataTypes.STRING,
             required: false
-        },
-        password: {
-            type: DataTypes.STRING,
-            required: false
         }
     }, {
         timestamps: false

@@ -24,7 +24,6 @@ module.exports = (db) => {
                 name: req.body.name,
                 isVerified: req.body.isVerified,
                 ucEmail: req.body.ucEmail,
-                password: req.body.password
             };
 
             db.Users.create(User)
