@@ -21,11 +21,9 @@ module.exports = (db) => {
 
         insert: (req, res) => {
             var User = {
-                userID: req.body.UserID,
                 name: req.body.name,
                 isVerified: req.body.isVerified,
                 ucEmail: req.body.ucEmail,
-                password: req.body.password
             };
 
             db.Users.create(User)

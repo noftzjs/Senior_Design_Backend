@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             required: false
         },
         userID: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             required: false
         },
         comment: {
