@@ -29,7 +29,15 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             required: false
         },
-        postType: {
+        repost: {
+            type: DataTypes.STRING,
+            required: false
+        },
+        feedback: {
+            type: DataTypes.STRING,
+            required: false
+        },
+        suggestion: {
             type: DataTypes.STRING,
             required: false
         }
