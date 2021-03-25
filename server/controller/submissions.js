@@ -29,7 +29,9 @@ module.exports = (db) => {
                 upVotes: req.body.upVotes,
                 userID: req.body.userID,
                 anonymous: req.body.anonymous,
-                postType: req.body.postType,
+                repost: req.body.repost,
+                feedback: req.body.feedback,
+                suggestion: req.body.suggestion,
             };
 
             db.submissions.create(submission)
